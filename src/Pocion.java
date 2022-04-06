@@ -1,4 +1,4 @@
-public class Pocion extends Objeto{
+public class Pocion extends Objeto {
     //efecto
     //duracion
 
