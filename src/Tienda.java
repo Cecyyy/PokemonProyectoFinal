@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Tienda {
+public class Tienda extends Objeto{
     //los atrinutos son:
   //nombre
     // y objetos disponibles arrayslistobjetos
@@ -23,15 +23,16 @@ public class Tienda {
         this.objetosDisponibles = objetosDisponibles;
     }
 
-    public Tienda(String nombre, ArrayList<Objeto> objetosDisponibles) {
-        this.nombre = nombre;
+    public Tienda(double costo, int cantidad, String nombre, String tipo, String nombre1, ArrayList<Objeto> objetosDisponibles) {
+        super(costo, cantidad, nombre, tipo);
+        this.nombre = nombre1;
         this.objetosDisponibles = objetosDisponibles;
     }
 
     private String nombre;
     private ArrayList <Objeto> objetosDisponibles;
 
-    public boolean usuarioComprar(double dinero, int cantidad, int indiceObjeto,int costo){
+    public boolean usuarioComprar(double dinero, int cantidad, int indiceObjeto){
         //validar que hay suficientes objetos  del tipo requerido (¿?)
         //cantidad y objeto
            //sis si tengo validar que el dinero sea suficiente
@@ -39,8 +40,18 @@ public class Tienda {
         //sino
             //mostrar que no le alcanza
            //hacemos excepcion de que no hay la cantidd que quiereS
-        if (indiceObjeto>objetosDisponibles.size()){
-            double precioTotal =cantidad =objetosDisponibles.get(indiceObjeto).getCantidad();
+        if (objetosDisponibles.get(indiceObjeto).cantidad >= cantidad){
+            double precioTotal =cantidad * objetosDisponibles.get(indiceObjeto).costo;
+            if (dinero >=precioTotal){
+                System.out.println("Usted esta comprando "+cantidad+ " "+ objetosDisponibles.get(indiceObjeto).nombre +
+                        "por $ "+precioTotal);
+                System.out.println("Su cambio es "+(dinero-precioTotal));
+                return true;
+            }else{
+                System.out.println("No contamos con la cantidad solicitada");
+                return false:
+
+            }
         }
 
         return false;
