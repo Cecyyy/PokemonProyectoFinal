@@ -33,13 +33,7 @@ public class Tienda extends Objeto{
     private ArrayList <Objeto> objetosDisponibles;
 
     public boolean usuarioComprar(double dinero, int cantidad, int indiceObjeto){
-        //validar que hay suficientes objetos  del tipo requerido (¿?)
-        //cantidad y objeto
-           //sis si tengo validar que el dinero sea suficiente
-             //si el dinero no es suficente
-        //sino
-            //mostrar que no le alcanza
-           //hacemos excepcion de que no hay la cantidd que quiereS
+        
         if (objetosDisponibles.get(indiceObjeto).cantidad >= cantidad){
             double precioTotal =cantidad * objetosDisponibles.get(indiceObjeto).costo;
             if (dinero >=precioTotal){
@@ -49,7 +43,7 @@ public class Tienda extends Objeto{
                 return true;
             }else{
                 System.out.println("No contamos con la cantidad solicitada");
-                return false:
+                return false;
 
             }
         }
