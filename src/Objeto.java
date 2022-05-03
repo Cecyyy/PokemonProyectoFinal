@@ -4,10 +4,10 @@ public class Objeto {
     //nombre -string
     //tipo - string
 
-    private double costo;
-    private int cantidad;
-    private String nombre;
-    private String tipo;
+    protected double costo;
+    protected int cantidad;
+    protected String nombre;
+    protected String tipo;
 
 
     //creacion de los getters y setters
@@ -51,5 +51,15 @@ public class Objeto {
         this.cantidad = cantidad;
         this.nombre = nombre;
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Objeto{" +
+                "costo=" + costo +
+                ", cantidad=" + cantidad +
+                ", nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
+                '}';
     }
 }
