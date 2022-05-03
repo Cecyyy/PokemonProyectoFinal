@@ -63,6 +63,13 @@ public class Tienda extends Objeto{
     }
 
     public boolean usuarioVender(Objeto objeto, int cantidad){
+       if (objeto.getClass()==Baya.class){
+           System.out.println("NO se pueden vender Bayas");
+       return false;
+       }else if (objeto.getClass()== Pokebola.class){
+           int cantidadPokebloa = objeto.cantidad- cantidad;
+           System.out.println("La venta se ha completado");
+       }
         //logica inversa de comprar
         //dinero infinito en la tienda
         //recibir los objetos y darles el dinero
