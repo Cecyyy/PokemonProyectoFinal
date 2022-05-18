@@ -65,4 +65,24 @@ public class Entrenador extends Personaje {
         this.pokedex = pokedex;
         this.moschila = moschila;
     }
+
+    @Override
+    public boolean pelear(Personaje personaje) {
+
+        //escoger pokemones para pelear
+        ArrayList <Pokemon> paraPelea= new ArrayList<>();
+        if (pokedex.size()>3){
+            for (Pokemon pokemon:pokedex) {
+                if (pokemon.getHp()>=15){
+                    paraPelea.add(pokemon);
+                }
+
+            }
+            if (paraPelea.size()>3){
+
+            }
+
+        }
+        return false;
+    }
 }

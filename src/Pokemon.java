@@ -1,4 +1,5 @@
 public class Pokemon extends Personaje{
+   //tostring en todas las clases
     //tipo -tipo
     //habilidad -habilidad
     //hp -int

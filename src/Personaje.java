@@ -1,4 +1,4 @@
-public class Personaje {
+public abstract class Personaje {
     //atributos
     //nombre -String protected
     //nivel 0int protected
@@ -41,4 +41,5 @@ public class Personaje {
     }
 
     //pelear -abstracto
+    public abstract boolean pelear (Personaje personaje);
 }
