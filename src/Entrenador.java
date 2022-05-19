@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Entrenador extends Personaje {
     //region -String
@@ -71,18 +72,44 @@ public class Entrenador extends Personaje {
 
         //escoger pokemones para pelear
         ArrayList <Pokemon> paraPelea= new ArrayList<>();
-        if (pokedex.size()>3){
-            for (Pokemon pokemon:pokedex) {
-                if (pokemon.getHp()>=15){
-                    paraPelea.add(pokemon);
-                }
+        mostrarPokedex();
+        System.out.println("Escoge tres pokemones");
+        Scanner scanner = new Scanner(System.in);
 
-            }
-            if (paraPelea.size()>3){
-
-            }
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Ingresa el pokemon");
+            paraPelea.add(pokedex.get(scanner.nextInt()-1));
 
         }
+        int respuesta=0;
+        do {
+            System.out.println("1.- Pelear");
+            System.out.println("2.- Usar posion");
+            System.out.println("3.- Huir");
+            respuesta=scanner.nextInt();
+            if (respuesta==1){
+                System.out.println("Escoge el pokemon para pelear");
+                mostrarPokedex(paraPelea);
+                int eleccion =scanner.nextInt();
+                paraPelea.get(eleccion).pelear(pokemonContrario);
+            }else if (respuesta==2){
+                //
+                mostrarMochila();
+
+
+                System.out.println("Escoge la baya o pocion para el pokemon");
+                int eleccion= scanner.nextInt();
+                System.out.println("Esicge el pokemon para dar Baya o Pocion");
+                mostrarPokedex (paraPelea);
+                moschila.get(eleccion-1).usar(paraPelea.get(scanner.nextInt()));
+
+            }else if (respuesta==3){
+
+            }
+
+        }while (respuesta !=0);
+
+
         return false;
     }
 }
