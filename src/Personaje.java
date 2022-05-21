@@ -42,6 +42,7 @@ public abstract class Personaje {
     public abstract boolean pelear (Personaje personaje);
 
 
+    public abstract boolean pelear(Pokemon pokemonContrario);
 
     @Override
     public String toString() {

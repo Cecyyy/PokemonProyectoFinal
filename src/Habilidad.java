@@ -36,4 +36,15 @@ public class Habilidad {
     public void setAtaqueBasico(int ataqueBasico) {
         this.ataqueBasico = ataqueBasico;
     }
+
+    //toString en tods ls clases
+
+    @Override
+    public String toString() {
+        return "Habilidad{" +
+                "nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", ataqueBasico=" + ataqueBasico +
+                '}';
+    }
 }

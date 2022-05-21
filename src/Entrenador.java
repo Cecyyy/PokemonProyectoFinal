@@ -79,11 +79,11 @@ public class Entrenador extends Personaje {
     }
 
     @Override
-    public boolean pelear(Personaje personaje) {
+    public boolean pelear(Pokemon pokemonContrario) {
 
         //escoger pokemones para pelear
         ArrayList <Pokemon> paraPelea= new ArrayList<>();
-        mostrarPokedex();
+        mostrarPokedex(pokedex);
         System.out.println("Escoge tres pokemones");
         Scanner scanner = new Scanner(System.in);
 
@@ -94,15 +94,22 @@ public class Entrenador extends Personaje {
         }
         int respuesta=0;
         do {
-            System.out.println("1.- Pelear");
+           if (paraPelea.size()!=0){
+
+               System.out.println("1.- Pelear");
             System.out.println("2.- Usar posion");
             System.out.println("3.- Huir");
             respuesta=scanner.nextInt();
+
             if (respuesta==1){
                 System.out.println("Escoge el pokemon para pelear");
                 mostrarPokedex(paraPelea);
                 int eleccion =scanner.nextInt();
-                paraPelea.get(eleccion).pelear(pokemonContrario);
+                if (!paraPelea.get(eleccion).pelear(pokemonContrario)){
+                    paraPelea.remove(eleccion);
+                }else {
+                    return true;
+                }
             }else if (respuesta==2){
                 //
                 mostrarMochila();
@@ -114,7 +121,9 @@ public class Entrenador extends Personaje {
                 mostrarPokedex (paraPelea);
                 moschila.get(eleccion-1).usar(paraPelea.get(scanner.nextInt()));
 
-            }else if (respuesta==3){
+            }else {
+                System.out.println("Huyendo...");
+                return false;
 
             }
 
@@ -122,6 +131,8 @@ public class Entrenador extends Personaje {
 
 
         return false;
+        }
+
     }
     public boolean intercambiar (ArrayList <Pokemon>mochilaOpuesto){
         System.out.println("Los objetos disponibles son: ");
@@ -148,6 +159,14 @@ public class Entrenador extends Personaje {
             Pokemon aux= pokedex.get(pokemonProp);
         }
         return acpeta;
+    }
+    public boolean tirarObjeto (int indice){
+        if (indice >moschila.size()-1){
+            return false;
+        }else{
+            moschila.remove(indice);
+        }
+        return true;
     }
 
     public void mostrarMochila(){
