@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Entrenador extends Personaje {
@@ -17,6 +18,15 @@ public class Entrenador extends Personaje {
     private int torneosGanados;
     private ArrayList <Pokemon>pokedex;
     private  ArrayList <Objeto> moschila;
+    private double dinero;
+
+    public double getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(double dinero) {
+        this.dinero = dinero;
+    }
 
     public String getRegion() {
         return region;
@@ -58,13 +68,14 @@ public class Entrenador extends Personaje {
         this.moschila = moschila;
     }
 
-    public Entrenador(String nombre, int nivel, char genero, String region, Pokemon pokemonMacota, int torneosGanados, ArrayList<Pokemon> pokedex, ArrayList<Objeto> moschila) {
+    public Entrenador(String nombre, int nivel, char genero, String region, Pokemon pokemonMacota, int torneosGanados, ArrayList<Pokemon> pokedex, ArrayList<Objeto> moschila, double dinro) {
         super(nombre, nivel, genero);
         this.region = region;
         this.pokemonMacota = pokemonMacota;
         this.torneosGanados = torneosGanados;
         this.pokedex = pokedex;
         this.moschila = moschila;
+        this.dinero = dinero;
     }
 
     @Override
@@ -111,5 +122,57 @@ public class Entrenador extends Personaje {
 
 
         return false;
+    }
+    public boolean intercambiar (ArrayList <Pokemon>mochilaOpuesto){
+        System.out.println("Los objetos disponibles son: ");
+        int indice=1;
+        for (Pokemon pokemon:mochilaOpuesto
+             ) {
+            System.out.println(indice +".-");
+            System.out.println(pokemon);
+            indice++;
+
+        }
+        Scanner leer =new Scanner(System.in);
+        System.out.println("Escoger pokemon opuesto: ");
+        int pokemonOpuestoEsc= leer.nextInt()-1;
+
+        int pokemonProp = leer.nextInt();
+        System.out.println("Intercambiar por:"+ pokedex.get(pokemonProp));
+        boolean acpeta=false;
+
+        Random random= new Random();
+        int valor = random.nextInt();
+        acpeta=(valor ==1);
+        if (acpeta){
+            Pokemon aux= pokedex.get(pokemonProp);
+        }
+        return acpeta;
+    }
+
+    public void mostrarMochila(){
+        System.out.println("Los objtos diponibles son: ");
+        int indice=1;
+        for (Objeto objeto:moschila
+             ) {
+            System.out.println(indice+".- ");
+            System.out.println(objeto);
+            indice++;
+
+        }
+    }
+    //agregar toString a todas las clases
+
+
+    @Override
+    public String toString() {
+        return "Entrenador{" +
+                "region='" + region + '\'' +
+                ", pokemonMacota=" + pokemonMacota +
+                ", torneosGanados=" + torneosGanados +
+                ", pokedex=" + pokedex +
+                ", moschila=" + moschila +
+                ", dinero=" + dinero +
+                '}';
     }
 }
