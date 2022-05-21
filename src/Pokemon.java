@@ -12,8 +12,10 @@ public class Pokemon extends Personaje{
     private  boolean esLegendario;
     private String debilContra;
     private String fuerteContra;
+    private int fuerte;
+    private int velocidad;
 
-    public Pokemon(String nombre, int nivel, char genero, String tipo, String habilidad, int hp, boolean esLegendario, String debilContra, String fuerteContra) {
+    public Pokemon(String nombre, int nivel, char genero, String tipo, String habilidad, int hp, boolean esLegendario, String debilContra, String fuerteContra, int velocidad) {
         super(nombre, nivel, genero);
         this.tipo = tipo;
         this.habilidad = habilidad;
@@ -21,6 +23,23 @@ public class Pokemon extends Personaje{
         this.esLegendario = esLegendario;
         this.debilContra = debilContra;
         this.fuerteContra = fuerteContra;
+        this.velocidad = velocidad;
+    }
+
+    public int getFuerte() {
+        return fuerte;
+    }
+
+    public void setFuerte(int fuerte) {
+        this.fuerte = fuerte;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
     }
 
     public String getTipo() {
@@ -69,5 +88,25 @@ public class Pokemon extends Personaje{
 
     public void setFuerteContra(String fuerteContra) {
         this.fuerteContra = fuerteContra;
+    }
+
+    @Override
+    public boolean pelear(Personaje personaje) {
+        return false;
+    }
+    //creacion del toString
+
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "tipo='" + tipo + '\'' +
+                ", habilidad='" + habilidad + '\'' +
+                ", hp=" + hp +
+                ", esLegendario=" + esLegendario +
+                ", debilContra='" + debilContra + '\'' +
+                ", fuerteContra='" + fuerteContra + '\'' +
+                ", fuerte=" + fuerte +
+                ", velocidad=" + velocidad +
+                '}';
     }
 }

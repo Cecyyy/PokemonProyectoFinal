@@ -161,6 +161,16 @@ public class Entrenador extends Personaje {
 
         }
     }
+    public void mostrarPokedex(ArrayList<Pokemon>Pokemones){
+        System.out.println("Los pokemones disponibles son: ");
+        int indice=1;
+        for (Pokemon objeto:Pokemones
+             ) {
+            System.out.println(indice+".- ");
+            System.out.println(objeto);
+            indice++;
+        }
+    }
     //agregar toString a todas las clases
 
 

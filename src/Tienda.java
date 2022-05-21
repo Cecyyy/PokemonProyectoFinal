@@ -15,6 +15,11 @@ public class Tienda extends Objeto{
         this.nombre = nombre;
     }
 
+    @Override
+    public boolean usar(Pokemon pokemon) {
+        return false;
+    }
+
     public ArrayList<Objeto> getObjetosDisponibles() {
         return objetosDisponibles;
     }
@@ -74,5 +79,13 @@ public class Tienda extends Objeto{
         //dinero infinito en la tienda
         //recibir los objetos y darles el dinero
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Tienda{" +
+                "nombre='" + nombre + '\'' +
+                ", objetosDisponibles=" + objetosDisponibles +
+                '}';
     }
 }

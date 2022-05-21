@@ -1,9 +1,7 @@
 public abstract class Personaje {
-    //atributos
-    //nombre -String protected
-    //nivel 0int protected
-    //genero -char protected
-
+    // nombre--> strin proected
+    //nivel---> int protected
+    //genero --->char protcted
     //creacion del contructor
 
     protected String nombre;
@@ -42,4 +40,15 @@ public abstract class Personaje {
 
     //pelear -abstracto
     public abstract boolean pelear (Personaje personaje);
+
+
+
+    @Override
+    public String toString() {
+        return "Personaje{" +
+                "nombre='" + nombre + '\'' +
+                ", nivel=" + nivel +
+                ", genero=" + genero +
+                '}';
+    }
 }

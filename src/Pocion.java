@@ -24,6 +24,32 @@ public class Pocion extends Objeto {
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
+
+    @Override
+    public boolean usar(Pokemon pokemon) {
+        if (this.efecto.equals("curacion")){
+            pokemon.setHp(pokemon.getHp()+20);
+            return true;
+        }else if (this.efecto.equals(("furza"))){
+            pokemon.getHabilidad().setataqueBase(pokemon.getHabilidad().getataqueBase()+20);
+            return true;
+
+        }else if (this.efecto.equals("velocidad")){
+            pokemon.setVelocidad(pokemon.getVelocidad()+20);
+            return true;
+        }else{
+            return false;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Pocion{" +
+                "efecto='" + efecto + '\'' +
+                ", duracion=" + duracion +
+                '}';
+    }
     //efecto
     //duracion
 
