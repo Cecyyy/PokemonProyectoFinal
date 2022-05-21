@@ -79,6 +79,11 @@ public class Entrenador extends Personaje {
     }
 
     @Override
+    public boolean pelear(Personaje personaje) {
+        return false;
+    }
+
+    @Override
     public boolean pelear(Pokemon pokemonContrario) {
 
         //escoger pokemones para pelear
@@ -127,11 +132,11 @@ public class Entrenador extends Personaje {
 
             }
 
-        }while (respuesta !=0);
+        }
 
 
         return false;
-        }
+        }while (respuesta !=0);
 
     }
     public boolean intercambiar (ArrayList <Pokemon>mochilaOpuesto){
