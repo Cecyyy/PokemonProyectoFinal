@@ -13,7 +13,7 @@ public interface UtilInterface {
     Pokemon crearPokemonsAleatorio();
 
     //generico sacar aleatorio = sacar un elemento generico aleatorio
-    <N> N sacarAleatorio (ArrayList<N>arrayList),
+    <N> N sacarAleatorio (ArrayList<N>arrayList);
 
     //string [] Debil y fuerte
 }
