@@ -7,18 +7,19 @@ public class Pokemon extends Personaje{
     //debilContra
     //fuerteContrav -String
     private String tipo;
-    private String habilidad;
+
     private  int hp;
     private  boolean esLegendario;
     private String debilContra;
     private String fuerteContra;
     private int fuerte;
     private int velocidad;
+    private Habilidad habilidad;
 
     public Pokemon(String nombre, int nivel, char genero, String tipo, String habilidad, int hp, boolean esLegendario, String debilContra, String fuerteContra, int velocidad) {
         super(nombre, nivel, genero);
         this.tipo = tipo;
-        this.habilidad = habilidad;
+
         this.hp = hp;
         this.esLegendario = esLegendario;
         this.debilContra = debilContra;
@@ -50,12 +51,7 @@ public class Pokemon extends Personaje{
         this.tipo = tipo;
     }
 
-    public String getHabilidad() {
-        return habilidad;
-    }
 
-    public void setHabilidad(String habilidad) {
-        this.habilidad = habilidad;
     }
 
     public int getHp() {
@@ -96,6 +92,14 @@ public class Pokemon extends Personaje{
     public boolean pelear(Personaje personaje) {
         return false;
     }
+    //creacion pelear
+
+    public boolean pelear(Pokemon pokemonContrario) {
+        if (this.fuerteContra.equals(pokemonContrario.getTipo())){
+            this.habilidad.getAtaqueBasico();
+
+        }
+    return false;}
 
 
 
