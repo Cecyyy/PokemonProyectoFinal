@@ -89,11 +89,16 @@ public class Pokemon extends Personaje{
     public void setFuerteContra(String fuerteContra) {
         this.fuerteContra = fuerteContra;
     }
+    //checar su tipo de elemento
+    //si un (elemento) es mas fuerte que otro 
 
     @Override
     public boolean pelear(Personaje personaje) {
         return false;
     }
+
+
+
     //creacion del toString
 
     @Override
