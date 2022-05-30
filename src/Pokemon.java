@@ -89,16 +89,28 @@ public class Pokemon extends Personaje{
     //si un (elemento) es mas fuerte que otro 
 
     @Override
-    public boolean pelear(Personaje personaje) {
-        return false;
-    }
-    //creacion pelear
+
 
     public boolean pelear(Pokemon pokemonContrario) {
         if (this.fuerteContra.equals(pokemonContrario.getTipo())){
-            this.habilidad.getAtaqueBasico();
+            this.habilidad.setAtaqueBasico(this.habilidad.getAtaqueBasico()+30);
+            pokemonContrario.habilidad.setAtaqueBasico(this.habilidad.getAtaqueBasico()-20);
 
+
+        }else if (pokemonContrario.getFuerteContra().equals(this.tipo)) {
+            this.habilidad.setAtaqueBasico(this.habilidad.getAtaqueBasico()-20);
+            pokemonContrario.habilidad.setAtaqueBasico(pokemonContrario.habilidad.getAtaqueBasico()+30);
+        }else {
         }
+        do {
+            if(this.velocidad>=pokemonContrario.velocidad){
+                pokemonContrario.setHp(pokemonContrario.getHp()-this.habilidad.getAtaqueBasico());
+                if (pokemonContrario.getHp()<=0){return true;}
+            }else{
+                this.hp-=pokemonContrario.getHabilidad
+            }
+        }while (true);
+
     return false;}
 
 

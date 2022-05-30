@@ -4,6 +4,7 @@
         //duracion
         private String efecto;
         private int duracion;
+        private Habilidad habilidad;
 
         //usar
         //si es curacion
@@ -39,7 +40,7 @@
                 pokemon.setHp(pokemon.getHp()+20);
                 return true;
             }else if (this.efecto.equals(("furza"))){
-                pokemon.getHabilidad().setataqueBase(pokemon.getHabilidad().getataqueBase()+20);
+                pokemon.get().setataqueBase(pokemon.getHabilidad().getataqueBase()+20);
                 return true;
 
             }else if (this.efecto.equals("velocidad")){
