@@ -21,10 +21,16 @@ public class Main implements UtilInterface {
     @Override
     public void tiempoJugado(long tiempoInicial, long tiempoFInal) {
 
+
     }
 
     @Override
     public void monstrarMenu() {
+        System.out.println("1.- EXPLORAR");
+        System.out.println("2.- ENTRAR AL TIENDA");
+        System.out.println("3.- TIRAR OBJETO");
+        System.out.println("4.- VER ESTADISTICAS");
+        System.out.println("5.- TIEMPO JUGADO");
 
     }
 
