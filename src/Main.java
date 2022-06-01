@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main implements UtilInterface {
     static ArrayList <Habilidad> habilidades =new ArrayList<>();
@@ -19,7 +20,16 @@ public class Main implements UtilInterface {
     }
 
     @Override
-    public void tiempoJugado(long tiempoInicial, long tiempoFInal) {
+    public void tiempoJugado(long tiempoInicial, long tiempoPresente)throws InterruptedException {
+
+
+    }
+    public void tiempoJugado(long tiempoInicial, double tiempoPresente)throws InterruptedException {
+        long tiempoInicialL =System.currentTimeMillis();
+        Thread.sleep(2000);
+        long fin=System.currentTimeMillis();
+        tiempoPresente =(double) ((fin-tiempoInicial)/1000);
+        System.out.println("El tiempo que has jugado es "+tiempoPresente+"segundos");
 
 
     }
@@ -41,7 +51,10 @@ public class Main implements UtilInterface {
 
     @Override
     public <N> N sacarAleatorio(ArrayList<N> arrayList) {
-        return null;
+        Random random= new Random();
+        int indice=random.nextInt(0,arrayList.size()-1);
+
+        return arrayList.get(indice);
     }
 
     @Override
@@ -152,5 +165,6 @@ public class Main implements UtilInterface {
 
 
         }
+        return namjoon;
     }
 }

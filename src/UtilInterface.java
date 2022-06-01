@@ -4,7 +4,8 @@ public interface UtilInterface {
     /* tiempo jugado
 
      */
-    void tiempoJugado(long tiempoInicial, long tiempoFInal);
+    void tiempoJugado(long tiempoInicial, long timepoPresente)throws InterruptedException;
+    void tiempoJugado(long tiempoInicial, double tiempoPresente)throws InterruptedException;
 
     //mostrar menu----> void con lista de acciones a realizar
     void monstrarMenu();
