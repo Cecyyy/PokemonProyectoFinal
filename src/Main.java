@@ -48,8 +48,9 @@ public class Main implements UtilInterface {
     public Pokemon crearPokemonesAleatorio() {
         return null;
     }
-    Pokemon poke1= new Pokemon()
-
+    Pokemon poke1= new Pokemon("Jiglypuff",94, (char) 1,"hada","ataque dormilon",30,false,"Goodra","Ponyta",20);
+    Pokemon poke2=new Pokemon("Altaria",23,'f',"dragon","cola de fuego",24,false,"hada","planta",10);
+    Pokemon poke3=new Pokemon("Vulpix",31,'m',"fuego","aliento de fuergo",30,false,"hada","planta",20);
     @Override
     public <N> N sacarAleatorio(ArrayList<N> arrayList) {
         Random random= new Random();
