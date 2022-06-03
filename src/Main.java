@@ -48,6 +48,7 @@ public class Main implements UtilInterface {
     public Pokemon crearPokemonesAleatorio() {
         return null;
     }
+    Pokemon poke1= new Pokemon()
 
     @Override
     public <N> N sacarAleatorio(ArrayList<N> arrayList) {

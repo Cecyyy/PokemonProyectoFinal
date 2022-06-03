@@ -38,22 +38,26 @@ public class Tienda extends Objeto{
     private ArrayList <Objeto> objetosDisponibles;
 
     public boolean usuarioComprar(double dinero, int cantidad, int indiceObjeto){
-        
-        if (objetosDisponibles.get(indiceObjeto).cantidad >= cantidad){
-            double precioTotal =cantidad * objetosDisponibles.get(indiceObjeto).costo;
-            if (dinero >=precioTotal){
-                System.out.println("Usted esta comprando "+cantidad+ " "+ objetosDisponibles.get(indiceObjeto).nombre +
-                        "por $ "+precioTotal);
-                System.out.println("Su cambio es "+(dinero-precioTotal));
-                return true;
-            }else{
-                System.out.println("No contamos con la cantidad solicitada");
-                return false;
+        try {
+            if (objetosDisponibles.get(indiceObjeto).cantidad >= cantidad) {
+                double precioTotal = cantidad * objetosDisponibles.get(indiceObjeto).costo;
+                if (dinero >= precioTotal) {
+                    System.out.println("Usted esta comprando " + cantidad + " " + objetosDisponibles.get(indiceObjeto).nombre +
+                            "por $ " + precioTotal);
+                    System.out.println("Su cambio es " + (dinero - precioTotal));
+                    return true;
+                } else {
+                    System.out.println("No contamos con la cantidad solicitada");
+                    return false;
 
+                }
             }
-        }
 
-        return false;
+            return false;
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("Objeto no ecistente");
+        }
+        return true;
     }
     public void mostrarDisponibles(){
         System.out.println("Los objetos disponibles son: ");

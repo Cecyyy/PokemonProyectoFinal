@@ -91,10 +91,25 @@ public class Entrenador extends Personaje {
         mostrarPokedex(pokedex);
         System.out.println("Escoge tres pokemones");
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresa el pokemon");
 
         for (int i = 0; i < 3; i++) {
-            System.out.println("Ingresa el pokemon");
-            paraPelea.add(pokedex.get(scanner.nextInt()-1));
+
+            try {
+
+                int indice= scanner.nextInt();
+
+                    paraPelea.add(pokedex.get(scanner.nextInt()-1));
+
+            }catch (IndexOutOfBoundsException e){
+                System.out.println("Este pokemon no existe, ingrese uno que exita");
+                i--;
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+                i--;
+
+            }
+           // paraPelea.add(pokedex.get(scanner.nextInt()-1));
 
         }
         int respuesta=0;
@@ -166,12 +181,16 @@ public class Entrenador extends Personaje {
         return acpeta;
     }
     public boolean tirarObjeto (int indice){
-        if (indice >moschila.size()-1){
-            return false;
-        }else{
+        try{
             moschila.remove(indice);
+            return true;
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("Ese objeto no existe");
+            return false;
         }
-        return true;
+
+
+        //return true;
     }
 
     public void mostrarMochila(){
