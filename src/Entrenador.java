@@ -180,6 +180,8 @@ public class Entrenador extends Personaje {
         }
         return acpeta;
     }
+    //ya existe un avance , pero lo hice en la otra compu, esto es como para tenrlo seguro
+    //el avance de mis try catch :)
     public boolean tirarObjeto (int indice){
         try{
             moschila.remove(indice);
