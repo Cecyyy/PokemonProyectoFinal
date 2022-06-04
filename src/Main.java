@@ -40,6 +40,10 @@ public class Main implements UtilInterface {
                 }
             }
         }
+        objetoMain.tiempoJugado((tiempoInicial,System.currentTimeMillis());
+        System.out.println(objetoMain.crearPokemonesAleatorio());
+        System.out.println(objetoMain.crearPokemonesAleatorio());
+        System.out.println(objetoMain.crearPokemonesAleatorio());
     }
 
     @Override
@@ -69,6 +73,7 @@ public class Main implements UtilInterface {
 
     @Override
     public Pokemon crearPokemonesAleatorio() {
+        Random random=new Random();
         return null;
     }
     Pokemon poke1= new Pokemon("Jiglypuff",94, (char) 1,"hada","ataque dormilon",30,false,"Goodra","Ponyta",20);
