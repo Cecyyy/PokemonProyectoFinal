@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main implements UtilInterface {
     static ArrayList <Habilidad> habilidades =new ArrayList<>();
@@ -22,6 +23,23 @@ public class Main implements UtilInterface {
         habilidades.add(habilidadSeis);
         tiposPokemon=new ArrayList<>(Arrays.asList("HADA","DRAGON","FUEGO","PSIQUICO","PLANTA","SINISESTRO","AGUA"));
         Main objetoMain =new Main();
+        int respuesta=1;
+        Scanner scanner=new Scanner(System.in);
+        while (respuesta!=0){
+            objetoMain.monstrarMenu();
+            System.out.println("Elige una de las opciones");
+            respuesta=scanner.nextInt();
+            if (respuesta==1){
+                int dejarExplorar=1;
+                while (dejarExplorar!=0){
+                    Thread.sleep((1500);
+                    System.out.println("¡Aparecio un POKEMON SALVAJE!");
+                    System.out.println(objetoMain.crearPokemonesAleatorio());
+                    System.out.println("¿Quieres seguir explorando? 1.-Si 0.-No");
+                    dejarExplorar=scanner.nextInt();
+                }
+            }
+        }
     }
 
     @Override
