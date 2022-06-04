@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main implements UtilInterface {
@@ -9,14 +10,18 @@ public class Main implements UtilInterface {
     static Habilidad habilidadCuatro= new Habilidad("CONFUSION","ataque onda mental",+100);
     static Habilidad habilidadCinco =new Habilidad("GIRO FUEGO","ataque bola sombra",+88);
     static Habilidad habilidadSeis=new Habilidad("COLMILLO ÍGNEO","ataque Sofoco",+89);
-
+    static ArrayList<String>tiposPokemon;
     public static void main(String[] args) {
+        long tiempoInicial=System.currentTimeMillis();
+
         habilidades.add(habilidadUno);
         habilidades.add(habilidadDos);
         habilidades.add(habilidadTres);
         habilidades.add(habilidadCuatro);
         habilidades.add(habilidadCinco);
         habilidades.add(habilidadSeis);
+        tiposPokemon=new ArrayList<>(Arrays.asList("HADA","DRAGON","FUEGO","PSIQUICO","PLANTA","SINISESTRO","AGUA"));
+        Main objetoMain =new Main();
     }
 
     @Override

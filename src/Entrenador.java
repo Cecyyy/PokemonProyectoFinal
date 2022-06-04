@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -92,6 +93,7 @@ public class Entrenador extends Personaje {
         System.out.println("Escoge tres pokemones");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingresa el pokemon");
+        //corrregi el otro try catch
 
         for (int i = 0; i < 3; i++) {
 
@@ -101,11 +103,14 @@ public class Entrenador extends Personaje {
 
                     paraPelea.add(pokedex.get(scanner.nextInt()-1));
 
+            }catch ( InputMismatchException e){
+                System.out.println("Ingrese un numero");
+                scanner.nextLine();
+                i--;
+
             }catch (IndexOutOfBoundsException e){
                 System.out.println("Este pokemon no existe, ingrese uno que exita");
-                i--;
-            }catch (Exception e){
-                System.out.println(e.getMessage());
+
                 i--;
 
             }

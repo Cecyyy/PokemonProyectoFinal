@@ -36,6 +36,7 @@ public class Tienda extends Objeto{
 
     private String nombre;
     private ArrayList <Objeto> objetosDisponibles;
+    //el otro try cathc en tiendtr
 
     public boolean usuarioComprar(double dinero, int cantidad, int indiceObjeto){
         try {
@@ -55,7 +56,7 @@ public class Tienda extends Objeto{
 
             return false;
         }catch (IndexOutOfBoundsException e){
-            System.out.println("Objeto no ecistente");
+            System.out.println("Objeto no existente");
         }
         return true;
     }
