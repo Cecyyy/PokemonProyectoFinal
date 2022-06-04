@@ -32,7 +32,7 @@ public class Main implements UtilInterface {
             if (respuesta==1){
                 int dejarExplorar=1;
                 while (dejarExplorar!=0){
-                    Thread.sleep((1500);
+                    Thread.sleep(1500);
                     System.out.println("¡Aparecio un POKEMON SALVAJE!");
                     System.out.println(objetoMain.crearPokemonesAleatorio());
                     System.out.println("¿Quieres seguir explorando? 1.-Si 0.-No");
@@ -74,7 +74,21 @@ public class Main implements UtilInterface {
     @Override
     public Pokemon crearPokemonesAleatorio() {
         Random random=new Random();
-        return null;
+        int numTipo=random.nextInt(tiposPokemon.size());
+        String tipo=sacarAleatorio(tiposPokemon);
+        int tamNombre=nombresaleatorios(tipo).length;
+        int nombre=random.nextInt(tamNombre);
+        int hp=random.nextInt(200);
+        boolean legendario= random.nextBoolean();
+        String nombreFinal=nombresaleatorios(tipo)[nombre];
+        int fuerza=random.nextInt(100);
+        int velocidad=random.nextInt(200);
+        String [] debilFuerte=debilYFuerteAleatorio(tipo);
+        int numbHabilidad=random.nextInt(habilidades.size());
+        int nivel=random.nextInt(habilidades.size());
+        char genero=random.nextInt(15)<5 ?'f':'m';
+
+        return new Pokemon(nombreFinal,nivel,genero,tipo,sacarAleatorio(habilidades),hp,legendario,debilFuerte[0],debilFuerte[1]);
     }
     Pokemon poke1= new Pokemon("Jiglypuff",94, (char) 1,"hada","ataque dormilon",30,false,"Goodra","Ponyta",20);
     Pokemon poke2=new Pokemon("Altaria",23,'f',"dragon","cola de fuego",24,false,"hada","planta",10);
@@ -90,6 +104,7 @@ public class Main implements UtilInterface {
     @Override
     public String[] debilYFuerteAleatorio(String tipo) {
         //[0]----> DEBIL
+
 
         // [1]---->FUERTE
         //VERIFICAR SI LA LOGICA DEDEBIL Y FUERTE
